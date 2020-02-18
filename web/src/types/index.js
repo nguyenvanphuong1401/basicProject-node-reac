@@ -1,0 +1,4 @@
+export const INIT_APP = 'INIT_APP'
+export const SET_DESTINATION = 'SET_DESTINATION'
+export const SET_CURRENT_USER = 'SET_CURRENT_USER'
+export const SET_ORDERS_FILTER = 'SET_ORDERS_FILTER'

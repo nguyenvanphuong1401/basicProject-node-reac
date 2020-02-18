@@ -1,0 +1,92 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/pro-layout": "^4.10.5",
+    "@apollo/react-components": "^3.1.3",
+    "@apollo/react-hooks": "^3.1.3",
+    "@babel/core": "^7.7.7",
+    "antd": "^3.26.6",
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-context": "^1.0.19",
+    "apollo-link-http": "^1.5.16",
+    "apollo-link-ws": "^1.0.19",
+    "axios": "^0.19.1",
+    "classnames": "^2.2.6",
+    "csv": "^5.3.1",
+    "draft-js": "^0.11.4",
+    "draftjs-to-html": "^0.8.4",
+    "exceljs": "^3.5.0",
+    "fbemitter": "^2.1.1",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "html-to-draftjs": "^1.5.0",
+    "immutability-helper": "^3.0.1",
+    "immutable": "^4.0.0-rc.12",
+    "indicative": "^5.0.8",
+    "json2csv": "^4.5.4",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "pretty-bytes": "^5.3.0",
+    "query-string": "^6.9.0",
+    "rc-progress": "^2.5.2",
+    "react": "^16.12.0",
+    "react-apollo": "^3.1.3",
+    "react-csv": "^1.1.2",
+    "react-currency-format": "^1.0.0",
+    "react-dnd": "^10.0.2",
+    "react-dnd-html5-backend": "^10.0.2",
+    "react-dom": "^16.12.0",
+    "react-draft-wysiwyg": "^1.14.3",
+    "react-dropbox-chooser": "0.0.5",
+    "react-google-charts": "^3.0.15",
+    "react-helmet": "^5.2.1",
+    "react-redux": "^7.1.3",
+    "react-router": "latest",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0",
+    "react-window-size-listener": "^1.5.4",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "sass-loader": "^7.3.1",
+    "styled-components": "^4.4.1",
+    "subscriptions-transport-ws": "^0.9.16",
+    "validator": "^12.1.0",
+    "xlsx": "^0.15.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy_merchizex": "npm run build && npm run s3replace && npm run s3deploy && npm run s3flush_cache && npm run pod_deploy",
+    "deploy_merchize": "rm ./src/config.js && cp ./src/config/config.merchize.js ./src/config.js && npm run build && scp -r ./build/* root@45.33.54.90:/var/www/merchize.dexp.io/app/",
+    "deploy_pod": "rm ./src/config.js && cp ./src/config/config.pod.js ./src/config.js && npm run build && scp -r ./build/* root@45.33.54.90:/var/www/pod.dexp.io/app/",
+    "deploy_pg": "rm ./src/config.js && cp ./src/config/config.pg.js ./src/config.js && npm run build && scp -r ./build/* root@45.33.54.90:/var/www/pg.dexp.io/app/",
+    "pod_deploy": "scp ./build/*.* root@45.33.54.90:/var/www/merchize.dexp.io/app",
+    "s3replace": "mv ./build/index.html ./build/index2.html && sed 's/=\"\\/static\\//=\"https:\\/\\/d11x4tayo69nht.cloudfront.net\\/static\\//g' ./build/index2.html > ./build/index.html && rm ./build/index2.html",
+    "s3deploy": "aws s3 sync ./build/static s3://pod.dexp.io/merchize/static --acl public-read",
+    "s3flush_cache": "aws cloudfront create-invalidation --distribution-id E25CMMMPMJEG89 --path /merchize/static/*",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

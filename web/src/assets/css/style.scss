@@ -1,0 +1,168 @@
+// body{
+//   .ant-drawer-content-wrapper {
+//       width: 600px !important;
+//   }
+//   .ant-drawer-header {
+//     position: relative;
+//     padding: 16px 24px;
+//     color: rgba(0, 0, 0, 0.65);
+//     background: #fff;
+//     padding: 21px;
+//     border-bottom: 1px solid #e8e8e8;
+//     border-radius: 4px 4px 0 0;
+// }
+//   @media only screen and (max-width: 768px) {
+//     .ant-drawer-content-wrapper {
+//       width: 100% !important;
+//     }
+//     .ant-drawer-content-wrapper{
+//       width: 100%;
+//     }
+//   }
+//   .ant-popover {
+//     //position: absolute;
+//     //text-align: center;
+//     //left: 10% !important;
+//     //top: 50px !important;
+//     cursor: pointer;
+//   }
+//   .ant-popover-inner {
+//     //max-width: 700px;
+//     // margin: auto;
+//   }
+//   .ant-popover-inner-content {
+//     //min-width: 500px;
+//   }
+//   .ant-layout-footer {
+//     text-align: center;
+//   }
+//   .ant-card-extra{
+//     padding: 0px;
+//   }
+//   .detail-order{
+//     line-height: 3;
+//     .order-item{
+//       margin: 30px 0px;
+//       border: 1px solid rgb(219, 210, 210);
+//       border-width: 1px 0 1px;
+//       .ant-card-bordered{
+//         border: unset;
+//       }
+//       .titel-item{
+//         margin: 0px 12px;
+//       }
+//       .list-item{
+//         border-top: 1px solid rgb(219, 210, 210);
+//         .image img{
+//           width: 70px;
+//           margin: 10px 0px;
+//           justify-content: center;
+//           border: 1px solid #f5f5f5;
+//           text-align: center;
+//           border-radius: 5px;
+//           height: auto;
+//         }
+//         .title-sku{
+//           color: #ccc;
+//           margin: 10px 0px;
+//         }
+//       }
+//     }
+//   }
+//   .ant-table-tbody > tr > td {
+//     padding: 10px
+//   }
+//   .money{
+//     text-align: right;
+//   }
+// }
+body{
+  .ant-table-content{
+    .ant-table-body{
+      background: #FFF;
+      border: 1px solid #e8e8e8;
+      border-bottom: none;
+      tr td {
+        padding: 10px 15px;
+        p{
+          margin: 0;
+        }
+      }
+    }
+    .ant-table-thead{
+      tr th {
+        padding: 12px 15px;
+      }
+    }
+  }
+  .ant-layout-footer{
+    padding: 15px;
+    text-align: center;
+  }
+  .ant-card-head{
+    min-height: 40px;
+    padding: 0 15px;
+    .ant-card-head-title{
+      padding: 10px 0;
+    } 
+  }
+  .ant-card-body{
+    padding: 15px;
+    .ant-form-item{
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  .ant-form-item-label{
+    font-weight: 500;
+    line-height: 25px;
+  }
+  .ant-form-item-required{
+    &:before{
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .ant-form-horizontal{
+    .ant-form-item{
+      margin-bottom: 10px;
+    }
+  }
+  .product-type-modal{
+    .ant-modal-header{
+      border-bottom: none;
+    }
+    .ant-modal-body{
+      padding: 0;
+      .ant-table-content .ant-table-body tr td{
+        padding: 5px 10px;
+      }
+    }
+    .ant-modal-footer{
+      border-top: none;
+    }
+  }
+  .ant-table-tbody{
+    .ant-form-item{
+      margin-bottom: 0px;
+    }
+  }
+  .product-variant-tag{
+      position: absolute;
+      top: -44px;
+      left: 40px;
+    }
+    .product-variants {
+      padding: 0;
+    }
+    .product-variants .ant-table-footer{
+      padding: 15px 0;
+    }
+}
+.ant-layout-sider{
+  position: fixed;
+}
